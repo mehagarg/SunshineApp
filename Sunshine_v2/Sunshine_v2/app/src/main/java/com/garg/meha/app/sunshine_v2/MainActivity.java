@@ -1,7 +1,7 @@
 package com.garg.meha.app.sunshine_v2;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -15,6 +15,11 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.ic_launcher);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+
+        // start fragment
+        if (savedInstanceState == null) {
+            getFragmentManager().beginTransaction().add(R.id.container_forecast, new ForecastWeatherFragment()).commit();
+        }
     }
 
 
